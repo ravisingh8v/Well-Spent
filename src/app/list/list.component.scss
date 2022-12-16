@@ -1,0 +1,26 @@
+.list {
+    transition: background-color 0.3s ease-in-out;
+    .delete {
+        top: -10px;
+        left: -8px;
+        color: red;
+        transform: scale(0);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+        
+        
+    }
+    
+    &:hover {
+        background-color: rgba(238, 237, 237, 0.678) !important;
+        .delete {
+            opacity: 1;
+            transform: scale(1);
+            &:hover{
+                transform:  scale(1.2);
+            }
+            
+        }
+    }
+}

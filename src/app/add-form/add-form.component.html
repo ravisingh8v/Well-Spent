@@ -1,0 +1,12 @@
+<form action="" [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-3">
+            <input type="text" formControlName="amount" class="mx-2 form-control" placeholder="Enter Amount">
+        </div>
+        <div class="col-6">
+            <input type="text" formControlName="description" class="mx-2 form-control" placeholder="Description"></div>
+        <div class="col-2">
+            <button type="submit" class="mx-2 btn btn-primary">Add</button>
+        </div>
+    </div>
+</form>
