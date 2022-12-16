@@ -1,10 +1,12 @@
+*{
+    font-family: $font-family-sans-serif;
+}
 html,body{
     height: 100%;
     width: 100%;
 }
-body{
-    font-family: $font-family-sans-serif;
-}
+// body{
+// }
 ul,li{
     list-style: none;
     margin: 0;
@@ -21,4 +23,14 @@ a{
 .form-control:focus{
     outline: none;
     box-shadow: none;
+}
+
+
+
+// custom classes 
+.bg-grad{
+    background: $gradient;
+}
+.text-grad{
+    color:  $gradient;
 }
