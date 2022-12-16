@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+// importing font 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+// overlay css 
+@import '@angular/cdk/overlay-prebuilt.css';
+
+// importing icons 
+@import 'assets/icons/style.css';
+
+// Importing bootstrap 
+@import 'assets/SCSS/vendors/bootstrap/index';
+
+// importing custom base file
+@import 'assets/SCSS/base/index';
+
+// header css import 
+@import 'assets/SCSS/component/index';
