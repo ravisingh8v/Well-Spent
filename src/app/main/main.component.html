@@ -3,46 +3,15 @@
     <div class="border border-end-0 border-top-0 border-start-0">
         <!-- Balance Section  -->
         <div class="p-5 bg-dark text-center">
-            <span class="fs-1 text-light fw-light">5000</span>
+            <span class="fs-1 text-light fw-light"><span>Total Balace</span><span class="d-block">{{availableBalace || 0}}</span></span>
         </div>
         <!-- add income and expense input  -->
         <div class="d-flex p-4 justify-content-center">
-            <div class="row">
-                <div class="col-3"><input type="text" class="mx-2 form-control" placeholder="Enter Amount"></div>
-                <div class="col-6"><input type="text" class="mx-2 form-control" placeholder="Description"></div>
-                <div class="col-2"><button type="submit" class="mx-2 btn btn-primary">Add</button></div>
-            </div>
+            <app-add-form></app-add-form>
         </div>
     </div>
     <!-- list Section -->
-    <div class="row g-0 mt-4 justify-content-center">
-        <div class="col-3 p-2 mx-3">
-            <!-- heading  -->
-            <div>
-                <h4 class="text-success fw-semibold">INCOME</h4>
-            </div>
-            <!-- list of income  -->
-            <div class="my-3">
-                <ul>
-                    <li class="bg-light ps-3 d-flex justify-content-between align-items-center rounded">
-                        <span class="text-success">Salary</span><span class="text-success rounded bg-success p-2 bg-opacity-25">5000</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div class="col-3 p-2 mx-3">
-            <!-- heading  -->
-            <div>
-                <h4 class="text-danger fw-semibold">EXPENSES</h4>
-            </div>
-            <!-- list of expenses  -->
-            <div class="my-3">
-                <ul class="">
-                    <li class="bg-light ps-3 d-flex justify-content-between align-items-center rounded">
-                        <span class="text-danger">Pizza</span><span class="text-danger rounded bg-danger p-2 bg-opacity-25">-5000</span>
-                    </li>
-                </ul>
-            </div>
-        </div>
+    <div>
+        <app-list></app-list>
     </div>
 </div>

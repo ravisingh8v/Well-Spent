@@ -1,0 +1,32 @@
+<div class="row g-0 mt-4 justify-content-center">
+    <div class="col-3 p-2 mx-3">
+        <!-- heading  -->
+        <div>
+            <h4 class="text-success fw-semibold">INCOME</h4>
+        </div>
+        <!-- list of income  -->
+        <div class="my-3">
+            <ul>
+                <li class="list position-relative bg-light my-3 ps-3 d-flex justify-content-between align-items-center rounded" *ngFor="let income of income" (click)="onEdit(income.id)">
+                    <span class="text-success">{{income.description}}</span><span class="text-success rounded bg-success p-2 bg-opacity-25">{{income.amount}}</span>
+                    <span class="position-absolute bg-danger bg-opacity-25 px-2 rounded-circle delete" (click)="onDelete(income.id)">x</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="col-3 p-2 mx-3">
+        <!-- heading  -->
+        <div>
+            <h4 class="text-danger fw-semibold">EXPENSES</h4>
+        </div>
+        <!-- list of expenses  -->
+        <div class="my-3">
+            <ul class="">
+                <li class="list position-relative bg-light my-3 ps-3 d-flex justify-content-between align-items-center rounded" *ngFor="let expense of expenses" (click)="onEdit(expense.id)">
+                    <span class="text-danger">{{expense.description}}</span><span class="text-center text-danger rounded bg-danger p-2 bg-opacity-25">{{expense.amount}}</span>
+                    <span class="position-absolute bg-danger bg-opacity-25 px-2 rounded-circle delete"(click)="onDelete(expense.id)">x</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

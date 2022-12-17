@@ -1,0 +1,46 @@
+<!-- form start here  -->
+<form action="" [formGroup]="addForm" class="" (ngSubmit)="onSubmit()">
+    <div class="row justify-content-center">
+        <div class="col-2">
+            <!-- amount input field  -->
+            <input type="number" formControlName="amount" class="mx-2 form-control" placeholder="Enter Amount"
+                [ngClass]="{'is-invalid':addForm.controls['amount'].invalid &&(addForm.controls['amount'].touched || isSubmit)}">
+                <!-- amount validation  -->
+            <div class="mx-2 text-danger"
+                *ngIf="addForm.controls['amount'].invalid &&(addForm.controls['amount'].touched || isSubmit)">
+                <span *ngIf="addForm.controls['amount'].errors?.['required']">
+                    This Field is Required
+                </span>
+            </div>
+            <!-- end  -->
+        </div>
+        <div class="col-4">
+            <!-- description input field  -->
+            <input type="text" [(ngModel)]="length" formControlName="description" class="mx-2 form-control"
+                placeholder="Description"
+                [ngClass]="{'is-invalid':addForm.controls['description'].invalid &&(addForm.controls['description'].touched || isSubmit || addForm.controls['description'].errors?.['maxlength'])}">
+                <!-- description validation msg  -->
+            <div class="d-flex position-relative mx-2 w-100">
+                <!-- msg -->
+                <div class="mx-2 text-danger"
+                    *ngIf="addForm.controls['description'].invalid &&(addForm.controls['description'].touched || isSubmit || addForm.controls['description'].errors?.['maxlength'])">
+                    <span *ngIf="addForm.controls['description'].errors?.['required']">
+                        This Field is Required
+                    </span>
+                    <span *ngIf="addForm.controls['description'].errors?.['maxlength'] ">
+                        Sorry You are Exceeding the Limit
+                    </span>
+                </div>
+                <!-- character count  -->
+                <div class="position-absolute me-1 text-secondary end-0">
+                    <small>{{length?.length || 0}}/30</small>
+                </div>
+            </div>
+        </div>
+        <!-- add button  -->
+        <div class="col-1">
+            <button type="submit" class="mx-2 w-100 btn btn-primary add-button">Add</button>
+        </div>
+    </div>
+</form>
+<!-- end  -->
