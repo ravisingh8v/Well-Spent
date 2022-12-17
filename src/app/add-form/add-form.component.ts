@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { CommunicationService } from '../shared/services/communication.service';
 import { DataService } from '../shared/services/data.service';
 import { budget } from './form.model';
@@ -14,15 +14,19 @@ export class AddFormComponent implements OnInit {
 
   public addForm: FormGroup;
   public id!: number;
-
+  public isSubmit:boolean
+public length?:string;
   constructor(private formBuilder: FormBuilder,
     private dataService: DataService,
     private communicationService: CommunicationService,
-    public activatedRoute: ActivatedRoute) {
+    public activatedRoute: ActivatedRoute,
+    public router:Router
+    ) {
     this.addForm = this.formBuilder.group({
-      amount: ['', [Validators.required, Validators.pattern('^[-]?[0-9]+$')]],
-      description: ['', Validators.maxLength(30)]
+      amount: ['', [Validators.required, Validators.pattern('^[-+]?[0-9]+$')]],
+      description: ['', [Validators.required,Validators.maxLength(30)]]
     })
+    this.isSubmit=false;
   }
 
 
@@ -35,12 +39,15 @@ export class AddFormComponent implements OnInit {
     })
   }
   onSubmit() {
+    this.isSubmit=true;
     console.log(this.addForm);
     if (this.addForm.valid) {
       if (this.id) {
         this.dataService.editData(this.id, this.addForm.value).subscribe(res => {
           this.communicationService.data.next(this.addForm.value)
           this.addForm.reset()
+          this.isSubmit=false;
+          this.router.navigate([''])
         })
       }
       else {
@@ -48,6 +55,7 @@ export class AddFormComponent implements OnInit {
           console.log(res);
           this.communicationService.data.next(this.addForm.value)
           this.addForm.reset()
+          this.isSubmit=false;
         })
       }
     }

@@ -25,8 +25,6 @@ a{
     box-shadow: none;
 }
 
-
-
 // custom classes 
 .bg-grad{
     background: $gradient;
@@ -34,3 +32,35 @@ a{
 .text-grad{
     color:  $gradient;
 }
+.form-control.is-invalid,.form-control.is-valid{
+    background-image: none;
+    padding-right: 20px;
+    // padding: 0;
+}
+
+
+// Custom Scroll Bar 
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+    // border-radius:5px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #dbdbdb;
+     border-radius:5px;
+  
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background:$gradient-scroll; 
+    //  border-radius:5px;
+    
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #025be0; 
+  }

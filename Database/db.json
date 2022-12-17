@@ -1,3 +1,24 @@
 {
-  "budget": []
+  "budget": [
+    {
+      "amount": "25000",
+      "description": "Salary",
+      "id": 1
+    },
+    {
+      "amount": "-1500",
+      "description": "Electricity Bill",
+      "id": 2
+    },
+    {
+      "amount": "1000",
+      "description": "Perks",
+      "id": 3
+    },
+    {
+      "amount": "10000",
+      "description": "Cashback",
+      "id": 4
+    }
+  ]
 }
